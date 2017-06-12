@@ -15,13 +15,12 @@ public class Person {
     private Long id;
     private List<Contact> contacts;
 
-    public Person(String firstName, String middleName, String secondName, Date dateOfBirth, List<Contact> contacts) {
+    public Person(String firstName, String middleName, String secondName, Date dateOfBirth) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.secondName = secondName;
         this.dateOfBirth = dateOfBirth;
         this.id = Service.generateId();
-        this.contacts = new ArrayList<>();
     }
 
     public String getFirstName() {

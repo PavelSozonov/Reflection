@@ -23,8 +23,11 @@ public class ManagerStudents {
     public void deserialize() throws IOException, ClassNotFoundException {
         FileInputStream in = new FileInputStream("students.dat");
         ObjectInputStream stream = new ObjectInputStream(in);
-        // TODO: loop
-        Student student = (Student)stream.readObject();
+        Student student;
+        do {
+            student = (Student)stream.readObject();
+            if (student != null)  students.add(student);
+        } while (student == null);
         stream.close();
     }
 
